@@ -1,0 +1,181 @@
+<html>
+  <head>
+    <style>
+      .tealSym {
+  background-color: #009688;
+}
+
+.ro3Sym {
+  background-color: #3F51B5;
+}
+
+.blackSym {
+  background-color: #16161d;
+}
+
+.trollSym {
+  background-color: #795548;
+}
+
+.stockInline {
+  font-family: 'Inconsolata';
+  background-color: #eff0f1;
+  padding-left: 0.36em;
+  padding-right: 0.36em;
+  font-size: 0.87em;
+}
+
+.sym {
+  height: 1em;
+  width: 1em;
+  display: inline-block;
+}
+
+
+html {
+  font-family: 'Roboto';
+  font-weight: 300;
+}
+
+.rainbow {
+  background: linear-gradient(
+    124deg,
+    #ff2400,
+    #e81d1d,
+    #e8b71d,
+    #e3e81d,
+    #1de840,
+    #1ddde8,
+    #2b1de8,
+    #dd00f3,
+    #dd00f3
+  );
+  background-size: 1800% 1800%;
+
+  -webkit-animation: rainbow 18s ease infinite;
+  -z-animation: rainbow 18s ease infinite;
+  -o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;
+}
+
+@-webkit-keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@-moz-keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@-o-keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+.rainbow, a.rainbow {
+  background: linear-gradient(
+    124deg,
+    #16161d,
+    #e81d1d,
+    #e8b71d,
+    #e3e81d,
+    #1de840,
+    #1ddde8,
+    #2b1de8,
+    #dd00f3,
+    #dd00f3
+  );
+  background-size: 1800% 1800%;
+  color: white !important;
+  border: white !important;
+
+  -webkit-animation: rainbow 18s ease infinite;
+  -z-animation: rainbow 18s ease infinite;
+  -o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;
+}
+@-webkit-keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@-moz-keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@-o-keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Roboto:300" rel="stylesheet">
+  </head>
+  <span><div class="ro3Sym sym"></div> - &lt; 3 shares owned <a onclick="a()" href="javascript:void(0)">(more info)</a></span> <br/>
+<span><div class="blackSym sym"></div> - referral stock or dollar stock</span> <br/>
+<span><div class="trollSym sym"></div> - troll stock (e.g. <span class="stockInline">GF</span> or <span class="stockInline">SEB</span>)</span> <br/>
+<span><div class="tealSym sym"></div> - accounts for &lt;1% of portfolio</span> <br/>
+<span><div class="rainbow sym"></div> - accounts for &lt;5% of portfolio (outer rows)</span> <br/>
+<span><div class="rainbow sym"></div> - accounts for &lt;20% of profit (middle rows)</span>
+</html>
