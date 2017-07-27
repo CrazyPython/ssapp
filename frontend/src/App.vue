@@ -1,4 +1,5 @@
 
+
 <template>
   <div id="app">
     <router-view></router-view>
@@ -15,9 +16,37 @@ mixpanel.init("a699a7410761a2335119fc713a952f9c");
   }
   export default {
   name: "app"
+}</script>
+
+  <style>/* vietnamese */
+    /* wrapper of table 2 */
+   
+.wrapper {
+  position: relative;
+  padding: 0 5px;
+  height: 250px;
+  overflow-y: auto;
 }
-</script>
-<style>/* vietnamese */
+
+/* Magnific popup */
+#popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 500px;
+  margin: 20px auto;
+}
+/* Since the popup has a 20px margin, we need to adjust the wrapper position
+Note:
+ this is only required because we aren't actually attaching the sticky header
+ to the #popup, instead we're attaching it to the .mfp-wrap because that
+ element scrolls instead of the window
+*/
+#popup .tablesorter-sticky-wrapper {
+  margin-left: 20px;
+  margin-top: -20px;
+}
 @font-face {
   font-family: 'Inconsolata';
   font-style: normal;
@@ -159,7 +188,30 @@ mixpanel.init("a699a7410761a2335119fc713a952f9c");
   font-weight: 400;
   src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://fonts.gstatic.com/s/materialicons/v22/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
 }
-
+/* cyrillic */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Playfair Display'), local('PlayfairDisplay-Regular'), url(https://fonts.gstatic.com/s/playfairdisplay/v10/2NBgzUtEeyB-Xtpr9bm1CRw5vVFbIG7DatP53f3SWfE.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Playfair Display'), local('PlayfairDisplay-Regular'), url(https://fonts.gstatic.com/s/playfairdisplay/v10/2NBgzUtEeyB-Xtpr9bm1CSVudZg2I_9CBJalMPResNk.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Playfair Display'), local('PlayfairDisplay-Regular'), url(https://fonts.gstatic.com/s/playfairdisplay/v10/2NBgzUtEeyB-Xtpr9bm1CRD8Ne_KjP89kA3_zOrHj8E.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
@@ -205,7 +257,7 @@ mixpanel.init("a699a7410761a2335119fc713a952f9c");
     color: white;
   }
   table {
-    font-size: 2.1vh;
+    font-size: 1.4vw;
   }
   .rainbow { 
 background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
@@ -302,15 +354,155 @@ background-size: 1800% 1800%;
   .symbol.rothree, a.rothree {
         background-color: #3F51B5;
     color: white !important;
+        border-bottom: none !important;
+        border-top: none !important;
+
 }
   .symbol.black, a.black {
     background-color: #16161d !important;
     color: white !important;
+        border-bottom: none !important;
+        border-top: none !important;
+
   }
   .symbol.purple, a.purple {
         background-color: #009688 !important;
     color: white !important;
+        border-bottom: none !important;
+        border-top: none !important;
+
+
   }
+  .sticky-wrap {
+	overflow-x: auto;
+	overflow-y: hidden;
+	position: relative;
+	margin: 3em 0;
+	width: 100%;
+}
+.sticky-wrap div[class^='sticky'] {
+	overflow: hidden;
+}
+.sticky-wrap tfoot {
+	display: none;
+}
+.sticky-wrap div table {
+	margin: 0;
+	position: relative;
+	width: auto; /* Prevent table from stretching to full size */
+}
+.sticky-wrap .sticky-thead,
+.sticky-wrap .sticky-col,
+.sticky-wrap .sticky-intersect {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 50;
+	transition: opacity .25s ease-in-out;
+}
+	.sticky-wrap .sticky-thead {
+		box-shadow: 0 0.25em 0.1em -0.1em rgba(0,0,0,.125);
+		z-index: 100;
+		width: 100%; /* Force stretch */
+	}
+	.sticky-wrap .sticky-intersect {
+		opacity: 1;
+		z-index: 150;
+	}
+		.sticky-wrap .sticky-intersect th {
+			background-color: #666;
+			color: #eee;
+		}
+.sticky-wrap td,
+.sticky-wrap th {
+	box-sizing: border-box;
+}
+.sticky-wrap thead th {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+.sticky-enabled {
+	margin: 0;
+	width: 100%;
+}
+
+/* Sort handlers */
+.sticky-wrap.sortable thead {
+	cursor: pointer;
+}
+.sticky-wrap.sortable thead th {
+	padding-right: 3em;
+	position: relative;
+}
+.sort-handle {
+	display: block;
+	position: absolute;
+	top: 50%;
+	right: -2em;
+	width: 1em;
+	height: 1em;
+	margin-top: -.5em;
+}
+	.sort-handle:before,
+	.sort-handle:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		width: 0;
+		height: 0;
+		transition: .125s ease-in-out;
+	}
+		.sort-handle:before {
+			border-top: .4em solid transparent;
+			border-right: .5em solid transparent;
+			border-bottom: .4em solid rgba(0,0,0,.25);
+			border-left: .5em solid transparent;		
+		}
+		.sort-handle:after {
+			border-top: .4em solid rgba(0,0,0,.25);
+			border-right: .5em solid transparent;
+			border-bottom: .4em solid transparent;
+			border-left: .5em solid transparent;			
+		}
+			.sticky-intersect .sort-handle:before { border-bottom-color: rgba(255,255,255,.5); }
+			.sticky-intersect .sort-handle:after  { border-top-color: rgba(255,255,255,.5); }
+
+		.sort-default .sort-handle:before {
+			opacity: 1;
+			top: -0.4em;
+		}
+		.sort-default .sort-handle:after {
+			opacity: 1;
+			bottom: -0.4em;
+		}
+		.sort-asc .sort-handle:before {
+			top: -0.1em;
+		}
+		.sort-asc .sort-handle:after {
+			opacity: 0;
+		}
+		.sort-desc .sort-handle:before {
+			opacity: 0;
+		}
+		.sort-desc .sort-handle:after {
+			bottom: -0.1em;
+		}
+
+/* To hide sticky column and intersect when screen gets too narrow */
+@media only screen and (max-width: 768px) {
+	html {
+		font-size: 14px;
+	}
+	header,
+	#final .sticky-wrap {
+		max-height: 25rem;
+	}
+	.sticky-col, .sticky-intersect {
+		display: none;
+	}
+}
   .whiteRainbow {
     color: white !important;
   }
@@ -322,22 +514,37 @@ background-size: 1800% 1800%;
   }
   .trollSymbol {
     background-color: #795548;
+        border-bottom: none !important;
+        border-top: none !important;
+
     color: white;
   }
         .tealSym {
   background-color: #009688;
+              border-bottom: none !important;
+        border-top: none !important;
+
 }
 
 .ro3Sym {
   background-color: #3F51B5;
+      border-bottom: none !important;
+        border-top: none !important;
+
 }
 
 .blackSym {
   background-color: #16161d;
+      border-bottom: none !important;
+        border-top: none !important;
+
 }
 
 .trollSym {
   background-color: #795548;
+      border-bottom: none !important;
+        border-top: none !important;
+
 }
 
 .stockInline {
@@ -352,6 +559,8 @@ background-size: 1800% 1800%;
   height: 1em;
   width: 1em;
   display: inline-block;
+      border-bottom: none !important;
+
 }
 
   a {
@@ -375,5 +584,200 @@ background-size: 1800% 1800%;
 }
   
   
+  .showbox {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5%;
+}
+
+.loader {
+  position: relative;
+  margin: 0 auto;
+  width: 100px;
+}
+.loader:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.circular {
+  -webkit-animation: rotate 2s linear infinite;
+          animation: rotate 2s linear infinite;
+  height: 100%;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  -webkit-animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+          animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  stroke-linecap: round;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+@-webkit-keyframes color {
+  100%,
+  0% {
+    stroke: #d62d20;
+  }
+  40% {
+    stroke: #0057e7;
+  }
+  66% {
+    stroke: #008744;
+  }
+  80%,
+  90% {
+    stroke: #ffa700;
+  }
+}
+@keyframes color {
+  100%,
+  0% {
+    stroke: #d62d20;
+  }
+  40% {
+    stroke: #0057e7;
+  }
+  66% {
+    stroke: #008744;
+  }
+  80%,
+  90% {
+    stroke: #ffa700;
+  }
+}
+  h3 {
+    font-family: 'Playfair Display';
+    font-size:200%;
+    margin: 0.2em 0 !important;
+  }
+  .badclassname {
+        display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+  }
+  i {
+  font-family: 'Material Icons';
+  font-feature-settings: 'liga';
+  font-weight: normal;
+  font-style: normal;
+  font-size:inherit;
+  line-height:inherit;
+  vertical-align: top;
+  display: inline-block;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}
+  html {
+  text-rendering: optimizeLegibility !important;
+    
+  }
   
+  thead {
+    cursor: pointer;
+    background-color: white;
+  }
+  #tbl2-sticky > thead > th {
+    border-bottom: 0px solid white !important;
+  }
+   iframe.dragging {pointer-events: none;}
+  #chat_embed2 {height:200px;width:400px;position:absolute; top:0;left:0;
+
+  }
+  .pchange {
+    border-bottom: none !important;
+    border-top: none !important;
+        border-right: none !important;
+
+  }
+  .tPaid {
+
+  }
+  .wrapper {
+  position: relative;
+  padding: 0 5px;
+  height: 250px;
+  overflow-y: auto;
+}
+
+/* Magnific popup */
+#popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 500px;
+  margin: 20px auto;
+}
+/* Since the popup has a 20px margin, we need to adjust the wrapper position
+Note:
+ this is only required because we aren't actually attaching the sticky header
+ to the #popup, instead we're attaching it to the .mfp-wrap because that
+ element scrolls instead of the window
+*/
+#popup .tablesorter-sticky-wrapper {
+  margin-left: 20px;
+  margin-top: -20px;
+}
 </style>
