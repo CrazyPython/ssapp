@@ -1,8 +1,7 @@
 FROM node:4-onbuild
 WORKDIR /usr/src/ssapp
-COPY package.json package-lock.json .
+COPY package.json .
 RUN npm install
 COPY . .
-EXPOSE 3000
+EXPOSE 3001
 CMD [ "npm", "start" ]
-
