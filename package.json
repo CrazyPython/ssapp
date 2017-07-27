@@ -1,8 +1,8 @@
 {
-  "name": "stockstream-live-frontend",
+  "name": "SSApp",
   "version": "0.0.1",
-  "description": "Another Vue.js project",
-  "author": "abalabahaha <hi@abal.moe>",
+  "description": "A portfolio viewer for StockStream",
+  "author": "crazypyth <james@avertly.co> and abalabahaha <hi@abal.moe> (worked seperately)",
   "license": "MIT",
   "scripts": {
     "dev": "node build/dev-server.js",
@@ -11,10 +11,11 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "framework7": "^1.6.4",
+    "raven": "^2.1.0",
     "vue": "^2.3.3",
     "vue-router": "^2.3.1",
-    "vue-websocket": "^0.2.2",
-    "framework7": "^1.6.4"
+    "vue-websocket": "^0.2.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
