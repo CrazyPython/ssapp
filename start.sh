@@ -1,4 +1,3 @@
 #!/bin/sh
-cd ~/frontend
-#npm install
+cd frontend
 npm start dev
