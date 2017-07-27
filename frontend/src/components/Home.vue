@@ -1,9 +1,5 @@
 <template>
   <div class="container" id="container">
-    
-  <a href="#" class="floating-button floating-button-to-popover open-popover color-purple">
-    <i class="icon icon-plus"></i>
-  </a>
     <h3>SSApp</h3>
     <p>Unofficial live viewer for <a href="https://www.twitch.tv/stockstream">StockStream</a>'s portfolio. (by crazypyth/&.)</p>
     <p>Color legend @ <a href="https://ssapp.glitch.me/static/legend.html" target="_blank">https://ssapp.glitch.me/static/legend.html</a></p>
