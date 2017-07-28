@@ -1,8 +1,8 @@
 {
-  "name": "stockstream-live-frontend",
+  "name": "SSApp",
   "version": "0.0.1",
-  "description": "Another Vue.js project",
-  "author": "abalabahaha <hi@abal.moe>",
+  "description": "A portfolio viewer for StockStream",
+  "author": "crazypyth <james@avertly.co> and abalabahaha <hi@abal.moe> (worked seperately)",
   "license": "MIT",
   "scripts": {
     "dev": "node build/dev-server.js",
