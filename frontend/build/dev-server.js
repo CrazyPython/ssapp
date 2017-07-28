@@ -12,6 +12,8 @@ var webpack = require('webpack')
 var proxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = require('./webpack.dev.conf')
 
+
+
 // default port where dev server listens for incoming traffic
 var port = process.env.PORT || config.dev.port
 // automatically open browser, if not set will be false
@@ -27,6 +29,25 @@ var devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
   quiet: true
 })
+var Raven = require('raven');
+
+// Must configure Raven before doing anything else with it
+Raven.config(process.env.DSN).install();
+
+// The request handler must be the first middleware on the app
+app.use(Raven.requestHandler());
+
+
+// The error handler must be before any other error middleware
+app.use(Raven.errorHandler());
+
+// Optional fallthrough error handler
+app.use(function onError(err, req, res, next) {
+    // The error id is attached to `res.sentry` to be returned
+    // and optionally displayed to the user for support.
+    res.statusCode = 500;
+    res.end(res.sentry + '\n');
+});
 
 var hotMiddleware = require('webpack-hot-middleware')(compiler, {
   log: () => {}
