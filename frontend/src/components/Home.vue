@@ -272,7 +272,16 @@ $(function(){
 
 });
   });
+
   alertify.parent(document.body) 
+  if (localStorage.wikiNotificationShown == null) {
+    setTimeout(function(){
+      alertify.log('There\'s more than just SSApp. Check out <a href="wiki.stockstream.live/">the StockStream wiki</a>.')
+      localStorage.wikiNotificationShown = true
+    , 20000)
+               
+  }
+  
   // @preserve jQuery.floatThead 1.2.9 - http://mkoryak.github.io/floatThead/ - Copyright (c) 2012 - 2014 Misha Koryak
 // @license MIT
 ! function (a) {
