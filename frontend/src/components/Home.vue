@@ -84,7 +84,7 @@
     <br/>
 
     <span class="tooltip-hidden">
-        <iframe scrolling="no" frameborder="0"  v-on:mouseout="iFrameMouseOut2" v-on:mouseover="aM"
+        <iframe scrolling="no" frameborder="0"  v-on:mouseout="iFrameMouseOut2" 
                 style="width: 60vh !important;height: 30vh !important;overflow: hidden;text-align: center;display: block;overflow:hidden;">
   </iframe>
 
@@ -163,7 +163,7 @@ v-bind:class="{ rothree: asset.isrothree, rainbow: isRainbow(asset) }" v-bind:st
       Forked by <a href="https://github.com/CrazyPython">@CrazyPython</a> from 
       <a href="https://github.com/abalabahaha">@abalabahaha</a>'s 
       <a href="https://stockstream.abal.moe/">original.</a>
-      (<a href="https://glitch.com/edit/#!/ssapp">source</a>) <br/>
+      (<a href="https://github.com/CrazyPython/ssapp">source</a>) <br/>
 License: GPLv3<br/>
 
 <a href="https://crazypython.github.io/stckstrm-static/shhh.html"><img height="15px" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Illuminati_triangle_eye.png" style="
@@ -172,6 +172,19 @@ License: GPLv3<br/>
   </div>
 </template>
 <script>
+  
+  setInterval(function() {
+    var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+       // Typical action to be performed when the document is ready:
+      JSON.parse(xhttp.responseText)['orders']
+    }
+};
+xhttp.open("GET", "http://stockstream-data.s3-website-us-west-2.amazonaws.com/portfolio", true);
+xhttp.send();
+  }, 1000)
+  
   $(function () {;
     
 $(function(){
@@ -262,7 +275,7 @@ $(function(){
     widthFixed : true,
     headerTemplate : '{content} {icon}', // Add icon for various themes
 
-    widgets: [ 'zebra', 'stickyHeaders',  ],
+    widgets: ['stickyHeaders',  ],
 
     widgetOptions: {
       // jQuery selector or object to attach sticky header to
@@ -278,7 +291,7 @@ $(function(){
     setTimeout(function(){
       alertify.log('There\'s more than just SSApp. Check out <a href="wiki.stockstream.live/">the StockStream wiki</a>.')
       localStorage.wikiNotificationShown = true
-    , 20000)
+    }, 20000)
                
   }
   
@@ -841,6 +854,8 @@ var myApp = new Framework7();
       var toset = 'https://crazypython.github.io/stckstrm-static/chart3.html?stock='+event.target.getAttribute('data-symbol')+'&daysback=' + this.daysBack.toString()
       
       var ele = document.getElementsByClassName("tooltip-hidden")[0]
+                ele.style.height = "30vh"
+
       ele.style.display = "block"
       ele.style.bottom = 0
       ele.style.right = 0
@@ -855,10 +870,10 @@ var myApp = new Framework7();
       var ele = document.getElementsByClassName("tooltip-hidden")[0]
       ele.style.display="none"
     },aM(event) {
-      var toset = 'https://grafana.avertly.co/dashboard-solo/db/ssapp-embed?editview=settings&orgId=2&panelId=1&from=now-2d&to=now'
+      var toset = 'https://grafana.avertly.co/dashboard-solo/db/ssapp-embed-2?orgId=2&panelId=1&from=now-14d&to=now'
           var ele = document.getElementById("abb")
           
-          ele.style.height = "30vh"
+          ele.style.height = "40vh"
       ele.style.display = "block"
       ele.style.top = "100%"
       ele.style.left = 0
@@ -924,7 +939,7 @@ var myApp = new Framework7();
       },
       transactionHistory(msg) {
         
-        
+        co
         this.transactionHistory = msg.transactionHistory
       },
       marketStateUpdate(msg) {
