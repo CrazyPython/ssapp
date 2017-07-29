@@ -939,7 +939,7 @@ var myApp = new Framework7();
       },
       transactionHistory(msg) {
         
-        co
+        console.log(this.transactionHistory)
         this.transactionHistory = msg.transactionHistory
       },
       marketStateUpdate(msg) {
