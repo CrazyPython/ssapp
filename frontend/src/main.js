@@ -17,10 +17,5 @@ new Vue({
   el: "#app",
   router,
   template: "<App/>",
-  components: {App},
-  framework7: {
-    root: '#app',
-    /* Uncomment to enable Material theme: */
-    material: true,
-  },
+  components: {App}
 })
