@@ -271,7 +271,6 @@ export default {
         this.quotes = msg.quotes
       },
       transactionHistory(msg) {
-
         console.log(this.transactionHistory)
         this.transactionHistory = msg.transactionHistory
       },

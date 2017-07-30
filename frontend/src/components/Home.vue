@@ -32,7 +32,6 @@
                   v-bind:class="{ sellTransaction: transaction.type.toUpperCase() == 'SELL',
                                 buyTransaction: transaction.type.toUpperCase() == 'BUY' }"></span>
             <span v-bind:class="{ sellTransactionRight: transaction.type.toUpperCase() == 'SELL',
-
                                 buyTransactionRight: transaction.type.toUpperCase() == 'BUY' }"
                   v-bind:data-symbol="transaction.symbol">
             {{ padSymbol(transaction.symbol) }}
@@ -102,7 +101,7 @@
 
     <div v-if="assets">
       <br/>
-      <table class="bordered tablesorter" columns="['symbol', 'shares' ,'paid', 'current price', 'change $']" id="tbl2">
+      <table class="bordered tablesorter" id="tbl2">
         <thead class="sticky-header">
         <tr>
           <th class="symbol symhead">Symbol</th>
