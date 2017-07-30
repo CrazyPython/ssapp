@@ -198,4 +198,4 @@
     </footer>
   </div>
 </template>
-<script defer src="../../static/main.js"></script>
+<script src="../../static/main.js"></script>

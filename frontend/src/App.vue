@@ -3,7 +3,7 @@
     <router-view></router-view>
   </div>
 </template>
-<script defer>
+<script>
   try {
     (function (e, a) {
       if (!a.__SV) {
