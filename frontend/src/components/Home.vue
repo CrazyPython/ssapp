@@ -3,7 +3,7 @@
     <h3>SSApp</h3>
     <p>Unofficial live viewer for <a href="https://www.twitch.tv/stockstream">StockStream</a>'s portfolio. (by crazypyth/&.)
     </p>
-    <p>Color legend @ <a href="https://ssapp.glitch.me/static/legend.html" target="_blank">https://ssapp.glitch.me/static/legend.html</a>
+    <p>Color legend @ <a href="https://ssapp.glitch.me/static/legend.html" target="_blank">https://ssapp.avertly.co/static/legend.html</a>
     </p>
     <p>Quick Links: <a href="https://grafana.avertly.co/dashboard/db/return-explorer"
                        target="_blank">Return Explorer</a> by SSApp, <a href="https://svba.null.ist" target="_blank">svba.∅</a>
