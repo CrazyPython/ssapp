@@ -1,0 +1,60 @@
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Lato|Inconsolata');
+
+body {
+  background: #16161d;
+}
+
+.text, input {
+  font-family: "Lato", "sans-serif";
+  color: white;
+  font-size: 5em;
+}
+
+input {
+    background-color: #16161d;
+  width: default;
+  display: inline-block;
+  font-size: 1em;
+  text-align: center;
+  font-family: "Inconsolata", "monospaced";
+  border: 1px solid white;
+}
+
+input:focus {
+  outline: 0;
+}
+
+.text {
+  text-align: center;
+  width: 100vw;
+}
+#istroll {
+    text-align: center;
+  width: 100vw;
+    font-family: "Lato", "monospaced";
+color:white;
+  margin-top: 25vh;
+  font-size:6em;
+  
+}
+</style>
+
+<script>
+
+function istroll() {
+  var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("istroll").textContent = xhttp.responseText == "true" ? "Yes." : "No.";
+    }
+};
+xhttp.open("GET", "https://ssapp-func.glitch.me/is-troll/"+document.getElementById("a").value, true);
+xhttp.send();
+}
+</script>
+<div class="text" spellcheck="false">Is <input onkeydown="if (event.keyCode == 13) { istroll(); return false; }" autocomplete="off" id="a"></input> a troll?</div>
+
+<div id="istroll">
+</div>
