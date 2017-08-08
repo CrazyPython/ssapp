@@ -73,11 +73,11 @@ Object.keys(proxyTable).forEach(function (context) {
 app.use(require('connect-history-api-fallback')())
 
 // serve webpack bundle output
-app.use(devMiddleware)
+//app.use(devMiddleware)
 
 // enable hot-reload and state-preserving
 // compilation error display
-app.use(hotMiddleware)
+//app.use(hotMiddleware)
 
 // serve pure static assets
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
