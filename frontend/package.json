@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A portfolio viewer for StockStream",
   "author": "crazypyth <james@avertly.co> and abalabahaha <hi@abal.moe> (worked seperately)",
-  "license": "GPL-3.0",
+  "license": "AGPL-3.0",
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
