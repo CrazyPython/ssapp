@@ -212,7 +212,7 @@ export default {
       var ele = document.getElementsByClassName("tooltip-hidden")[0]
       ele.style.display = "none"
     }, aM(event) {
-      var toset = 'https://grafana.avertly.co/dashboard-solo/db/ssapp-embed-2?orgId=2&panelId=1&from=now-14d&to=now'
+      var toset = 'https://grafana.avertly.co/dashboard-solo/db/return-explorer-copy?orgId=2&panelId=1&from=now-24d&to=now'
       var ele = document.getElementById("abb")
 
       ele.style.height = "40vh"
