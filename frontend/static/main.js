@@ -139,7 +139,8 @@ export default {
       if (asset.percentPortfolio > 1 && !this.isRainbow(asset)) {
         return `#009688`
       }
-    }, portfolioPercentToTextColor: function (percent) {
+    },
+    portfolioPercentToTextColor: function (percent) {
       if (percent > 1 && percent <= 5) {
         return `white`
       }
@@ -179,21 +180,18 @@ export default {
     },
     isTrollStock(asset) {
       return this.trollStocks.includes(asset.symbol.toUpperCase())
-    }
-    , iFrameMouseOver(event) {
+    },
+    iFrameMouseOver(event) {
       var stock = event.target.getAttribute('data-symbol')
       var toset = 'https://crazypython.github.io/stckstrm-static/chart3.html?stock=' + event.target.getAttribute('data-symbol') + '&daysback=' + this.daysBack.toString()
 
       var ele = document.getElementsByClassName("tooltip-hidden")[0]
       ele.style.height = "30vh"
-
       ele.style.display = "block"
       ele.style.bottom = 0
       ele.style.right = 0
       ele.style.position = "fixed"
-      //ele.children[0].contentWindow.postMessage(stock, "https://crazypython.github.io/stckstrm-static/chart.html")
-
-
+      
       if (ele.children[0].getAttribute('src') !== toset) {
         ele.children[0].setAttribute('src', toset)
       }
@@ -270,18 +268,6 @@ export default {
     }
   },
   options: {
-    customSorting: {
-      shares: function (ascending) {
-        return function (a, b) {
-          var lastA = a.name[a.name.length - 1].toLowerCase()
-          var lastB = b.name[b.name.length - 1].toLowerCase()
-
-          if (ascending)
-            return lastA <= lastB ? 1 : -1
-
-          return lastA >= lastB ? 1 : -1
-        }
-      }
-    }
+    
   }
 }
