@@ -43,7 +43,7 @@ export default {
       totalTrades: 78,
       trollStocks: ['SEB', 'CAKE', 'GF', 'DOG'],
       symbolToAsset: {},
-      daysBack: 60,
+      daysBack: 1825,
       roi: 0,
     }
   },
