@@ -5,9 +5,11 @@
     </p>
     <p>Color legend @ <a href="https://ssapp.avertly.co/static/legend.html" target="_blank">https://ssapp.avertly.co/static/legend.html</a>
     </p>
-    <p>Quick Links: <a href="https://grafana.avertly.co/dashboard/db/return-explorer"
-                       target="_blank">Return Explorer</a> by SSApp, <a href="https://svba.null.ist" target="_blank">svba.∅</a>
-      by johannesn</p>
+    <p>
+      Quick Links: 
+      <a href="https://grafana.avertly.co/dashboard/db/return-explorer" target="_blank">Return Explorer</a> by SSApp,
+      <a href="https://svba.null.ist" target="_blank">svba.∅</a> by johannesn
+    </p>
     <br/>
 
     <div v-if="!connected"></div>
