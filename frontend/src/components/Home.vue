@@ -8,8 +8,8 @@
     <p>
       Quick Links: 
       <a href="https://grafana.avertly.co/dashboard/db/return-explorer" target="_blank">Return Explorer</a> by SSApp,
-      <a href="https://svba.null.ist" target="_blank">svba.∅</a> by johannesn
-      , <a href="http://mechrono.x10host.com/stock/">Scamtool 7000</a> (alpha) by Mechrono
+      <a href="https://svba.null.ist" target="_blank">svba.∅</a> by johannesn,
+      <a href="http://mechrono.x10host.com/stock/">Scamtool 7000</a> (alpha) by Mechrono
     </p>
     <br/>
 
