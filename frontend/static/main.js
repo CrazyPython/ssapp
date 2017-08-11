@@ -1,14 +1,3 @@
-setInterval(function () {
-  var xhttp = new XMLHttpRequest()
-  xhttp.onreadystatechange = function () {
-    if (this.readyState === 4 && this.status === 200) {
-      JSON.parse(xhttp.responseText)['orders']
-    }
-  }
-  xhttp.open("GET", "http://stockstream-data.s3-website-us-west-2.amazonaws.com/portfolio", true)
-  xhttp.send()
-}, 1000)
-
 $(function () {
   setTimeout(function () {
     $("#tbl2").tablesorter(
