@@ -98,7 +98,7 @@
 
     <span class="tooltip-hidden">
       <iframe scrolling="no" frameborder="0" v-on:mouseout="iFrameMouseOut2"
-              style="width: 60vh !important;height: 30vh !important;overflow: hidden;text-align: center;display: block;overflow:hidden;">
+              style="width: 60vh !important;height: 40vh !important;overflow: hidden;text-align: center;display: block;overflow:hidden;">
       </iframe>
     </span>
 
