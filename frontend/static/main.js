@@ -186,7 +186,7 @@ export default {
       var toset = 'https://crazypython.github.io/stckstrm-static/chart3.html?stock=' + event.target.getAttribute('data-symbol') + '&daysback=' + this.daysBack.toString()
 
       var ele = document.getElementsByClassName("tooltip-hidden")[0]
-      ele.style.height = "30vh"
+      ele.style.height = "40vh"
       ele.style.display = "block"
       ele.style.bottom = 0
       ele.style.right = 0
