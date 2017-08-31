@@ -24,6 +24,8 @@ if (localStorage.wikiNotificationShown === null) {
     localStorage.wikiNotificationShown = true
   }, 20000)
 }
+$('.aaaa').tooltip({track:true})
+
 
 export default {
   data() {
