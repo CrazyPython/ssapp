@@ -78,7 +78,7 @@ export default {
       }
     },
     formatFinanceLink(symbol) {
-      return `https://www.google.com/finance?q=${symbol}`
+      return `https://www.tradingview.com/symbols/${symbol}/`
     },
 
     formatTipRanksLink(symbol) {
